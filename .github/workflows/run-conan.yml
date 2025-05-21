@@ -27,4 +27,4 @@ jobs:
           sudo pip3 install -e . --ignore-installed
 
       - name: Run the script
-        run: ./run
+        run: ./run.sh
