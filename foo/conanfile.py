@@ -19,3 +19,5 @@ class FooRecipe(ConanFile):
         super().set_version()
         # This works, which means that the python requires is already resolved.
         # self.python_requires["conan_base"].module.ConanBase.set_version(self)
+
+        # If this whole method is missing here, we get "ERROR: conanfile didn't specify version".
