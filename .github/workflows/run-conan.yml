@@ -1,0 +1,30 @@
+name: Run Conan Script
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  run-conan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your repository
+        uses: actions/checkout@v4
+
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y python3-pip git
+
+      - name: Clone conan-io/conan repository
+        run: git clone https://github.com/conan-io/conan.git conan-io
+
+      - name: Install Conan in development mode
+        run: |
+          cd conan-io
+          sudo pip3 install -e .
+
+      - name: Run the script
+        run: ./run
