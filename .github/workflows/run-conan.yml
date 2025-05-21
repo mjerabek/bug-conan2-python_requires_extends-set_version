@@ -24,7 +24,7 @@ jobs:
       - name: Install Conan in development mode
         run: |
           cd conan-io
-          sudo pip3 install -e .
+          sudo pip3 install -e --ignore-installed .
 
       - name: Run the script
         run: ./run
