@@ -6,7 +6,7 @@ class FooRecipe(ConanFile):
     name = "foo"
     package_type = "application"
     python_requires = "conan_base/[>=1.0 <2.0]"
-    python_requires_extends = "conan_base.ConanBase"
+    python_requires_extend = "conan_base.ConanBase"
 
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
